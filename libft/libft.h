@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wroyal <wroyal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: krick <krick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 17:44:34 by wroyal            #+#    #+#             */
-/*   Updated: 2022/01/04 17:44:35 by wroyal           ###   ########.fr       */
+/*   Created: 2021/07/28 16:28:54 by krick             #+#    #+#             */
+/*   Updated: 2021/07/28 16:28:58 by krick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-t_list	*ft_lstlast(t_list *lst)
-{
-	t_list	*last;
+# include <unistd.h>
 
-	if (!lst)
-		return (NULL);
-	while (lst)
-	{
-		if (!lst->next)
-			last = lst;
-		lst = lst->next;
-	}
-	return (last);
-}
+size_t	ft_strlen(const char *str);
+int		ft_atoi(const char *str);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int num, int fd);
+
+#endif

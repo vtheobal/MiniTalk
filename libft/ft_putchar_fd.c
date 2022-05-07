@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wroyal <wroyal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: krick <krick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 17:44:29 by wroyal            #+#    #+#             */
-/*   Updated: 2022/01/04 17:44:30 by wroyal           ###   ########.fr       */
+/*   Created: 2021/07/28 16:29:49 by krick             #+#    #+#             */
+/*   Updated: 2021/07/28 16:29:51 by krick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_putchar_fd(char c, int fd)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	write(fd, &c, 1);
 }

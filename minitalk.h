@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wroyal <wroyal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vtheobal <vtheobal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 17:43:55 by wroyal            #+#    #+#             */
-/*   Updated: 2022/01/04 17:43:56 by wroyal           ###   ########.fr       */
+/*   Created: 2021/09/18 13:43:25 by vtheobal          #+#    #+#             */
+/*   Updated: 2021/09/18 16:54:44 by vtheobal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#ifndef MINITALK_H
+# define MINITALK_H
 
-int	ft_isspace(char c)
+# include "./libft/libft.h"
+# include <signal.h>
+# include <stdio.h>
+
+typedef struct s_data
 {
-	return ((c >= 9 && c <= 13) || c == ' ');
-}
+	char	ch;
+	size_t	size;
+	char	buff[1000];
+	int		i;
+}				t_data;
+
+#endif

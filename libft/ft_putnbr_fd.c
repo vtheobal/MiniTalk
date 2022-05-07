@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wroyal <wroyal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: krick <krick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 16:27:04 by wroyal            #+#    #+#             */
-/*   Updated: 2022/01/04 16:16:15 by wroyal           ###   ########.fr       */
+/*   Created: 2021/07/28 16:29:55 by krick             #+#    #+#             */
+/*   Updated: 2021/07/28 16:29:56 by krick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int num, int fd)
 {
-	char			a;
-	unsigned int	m;
-
-	if (n < 0)
+	if (num == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (num < 0)
 	{
-		write(fd, "-", 1);
-		m = (unsigned int)(n * -1);
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-num, fd);
 	}
-	if (n >= 0)
-		m = (unsigned int)n;
-	if (m > 9)
-		ft_putnbr_fd(m / 10, fd);
-	a = m % 10 + '0';
-	write(fd, &a, 1);
+	else if (num >= 10)
+	{
+		ft_putnbr_fd(num / 10, fd);
+		ft_putchar_fd(num % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(num + '0', fd);
 }

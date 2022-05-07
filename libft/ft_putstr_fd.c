@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wroyal <wroyal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: krick <krick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 12:14:35 by wroyal            #+#    #+#             */
-/*   Updated: 2022/01/04 16:14:37 by wroyal           ###   ########.fr       */
+/*   Created: 2021/07/28 16:29:59 by krick             #+#    #+#             */
+/*   Updated: 2021/07/28 16:30:00 by krick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putstr_fd(char *str, int fd)
 {
-	int				i;
-	unsigned char	*ptr;
-	unsigned char	ctr;
+	int	i;
 
 	i = 0;
-	ptr = (unsigned char *) s;
-	ctr = (unsigned char) c;
-	while (n > 0)
+	if (!str)
+		return ;
+	while (str[i] != 0)
 	{
-		if (ptr[i] == ctr)
-			return (&ptr[i]);
+		ft_putchar_fd(str[i], fd);
 		i++;
-		n--;
 	}
-	return (NULL);
 }

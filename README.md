@@ -1,5 +1,5 @@
 <h1 align="center">
-	:busts_in_silhouette: ft_printf
+	:busts_in_silhouette: MiniTalk
 </h1>
 
 #### Целью этого проекта является создание двух исполняемых файлов: сервера и клиента.
